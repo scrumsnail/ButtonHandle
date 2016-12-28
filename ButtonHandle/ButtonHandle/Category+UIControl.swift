@@ -37,8 +37,8 @@ public extension UIButton {
         }
     }
 
-    override public class func initialize() {
 
+     override open class func initialize() {
         let a :Method = class_getInstanceMethod(self, #selector(UIButton.sendAction(_:to:for:)))
         let b :Method = class_getInstanceMethod(self, #selector(UIButton.ss_sendAction(_:to:for:)))
         method_exchangeImplementations(a, b)

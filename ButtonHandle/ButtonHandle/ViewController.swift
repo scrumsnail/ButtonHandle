@@ -10,17 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
     let moveView = UIView()
+    
+    @IBOutlet weak var move: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         move.ss_ignore_event = false
         move.ss_accepet_time = 3
         moveView.frame = CGRect(x: 0, y: 0, width: 50, height: 50);
-        moveView.backgroundColor = UIColor.black()
+        moveView.backgroundColor = UIColor.black
         moveView.center = CGPoint(x: 50, y: 50)
         self.view.addSubview(moveView)
     }
 
-    @IBOutlet weak var move: UIButton!
     @IBAction func moveAction(_ sender: AnyObject) {
         UIView.animate(withDuration: 3, animations: {
             self.moveView.center = CGPoint(x: 200, y: 400)
